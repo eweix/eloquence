@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main>
+	<article>
+	<h1>{{ .Title }}</h1>
+		{{ .Content }}
+	<nav>
+		<ul>
+			{{ range .Pages }}
+			<li>
+				<a href="{{ .RelPermalink }}">{{ .LinkTitle }} &Backslash; {{ .Lastmod.Format "2006-01-02" }}</a>
+			</li>
+		{{ end }}
+		</ul>
+	</nav>
+</article>
+</main>
+{{ end }}
