@@ -1,7 +1,7 @@
 <header>
 	<nav>
 		<ul>
-			<li><a style="color: var(--accent);" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></li>
+			<li><a class="accent" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></li>
 			{{ with .Site.Menus.main }}
 			{{ range . }}
 			<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>

@@ -18,8 +18,10 @@
 	{{- end }}
 </head>
 <body>
+	<main>
 	{{ partial "header" . }}
 	{{ block "main" . }}{{ end }}
 	{{ partial "footer" . }}
+	</main>
 </body>
 </html>
