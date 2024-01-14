@@ -1,0 +1,165 @@
+// style text
+$font: system-ui, sans-serif;
+$mono: monospace;
+
+// colors
+$text: #0d0d0d;
+$link: #0479A8;
+$background: #f5f5f5;
+$border: #7c7f93;
+$accent: #c5050c;
+
+@media (prefers-color-scheme: dark) {
+    $text: #f5f5f5;
+    $link: #89b4fa;
+    $background: #0d0d0d;
+    $border: #ccd0da;
+    $accent: #f38ba8;
+}
+
+// layout
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 2rem auto;
+	margin-top: 0rem;
+	padding: 1rem;
+}
+
+body {
+	font-family: system-ui, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	line-height:1.5;
+	font-size: 1.2rem;
+	color: $text;
+	background: $background;
+}
+
+// configure header
+header {
+	display: flex;
+	padding: 1rem;
+	font-weight: 200px;
+	font-size: 1.4rem;
+	text-align: right;
+	width: 12rem;
+	white-space: nowrap;
+
+	// fix sidebar in place
+	position: sticky;
+	top: 0;
+	height: 100%;
+
+	li {
+		margin-right: 2rem;
+	}
+
+}
+
+footer {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	margin: 1rem auto 0 auto;
+}
+
+// set text max width to 85% window size
+article {
+	margin-left: 0.5rem;
+	width: 50rem;
+	max-width: 80vw;
+	min-height: 70vh;
+}
+
+// style section lists
+.list {
+
+	li {
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		line-height: 2;
+	}
+
+	ul {
+		list-style-position: inside;
+		padding-left: 0;
+	}
+
+	a {
+		color: $text;
+		text-decoration: none;
+	}
+
+}
+
+// set text decorations
+blockquote {
+	font-style: italic;
+	padding-left: 1rem;
+	border-left: 3px solid $accent;
+}
+
+a {
+	text-decoration-skip-ink: auto;
+	text-decoration: underline;
+	color: $link;
+}
+
+a.accent {
+	color: $accent;
+}
+
+nav {
+
+	li {
+		list-style-type: none;
+		line-height: 2;
+	}
+
+	a {
+		text-decoration: none;
+		color: $text;
+	}
+
+}
+
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
+	text-decoration: none; // remove heading underline
+}
+
+article h1:first-child {
+	margin-top: 0;
+}
+
+header a {
+	text-decoration: none; // remove underline in nav
+	color: $text; // uncolor links
+}
+
+// responsive design
+@media screen and (max-width: 65rem ) {
+
+	header{
+		position: relative;
+	}
+
+	header ul {
+		display: flex;
+		float: center;
+		padding-bottom: 2rem;
+		border-bottom: 0px;
+	}
+
+}
