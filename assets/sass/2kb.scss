@@ -91,25 +91,18 @@ article {
 	display: grid;
 	gap: 8px;
 	grid-template-columns: 2fr 1fr 1fr;
-
-	div {
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-
 }
 
 .shelf {
 	display: grid;
 	gap: 8px;
 	grid-template-columns: 1fr 0.75fr min-content 120px;
+}
 
-	div {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-
+.list div, .shelf div {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .list a, .shelf a {
@@ -130,7 +123,7 @@ a {
 	color: $link;
 }
 
-a.accent {
+.accent {
 	color: $accent;
 }
 
@@ -168,20 +161,11 @@ header a {
 		max-width: 100%;
 	}
 
-	// .list {
-// 
-		// li {
-			// justify-content: none;
-			// display: block;
-		// }
-	// }
-
 	header {
 		position: relative;
 		display: block;
 
 		ul {
-			// display: flex;
 			padding-bottom: 2rem;
 			border-bottom: 1px;
 			border-color: $border;
@@ -195,11 +179,13 @@ header a {
 
 		div {
 			white-space: normal;
+
+			.last {
+			height: 3rem;
+			}
+
 		}
 
-		div.last {
-			height: 3rem;
-		}
 	}
 
 }
