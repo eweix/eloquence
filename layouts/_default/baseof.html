@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ .Title }}</title>
 
-	{{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed") }}
-	{{ $style := resources.Get "sass/_main.scss" | toCSS $options | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-	<!-- <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}"> -->
+	{{/* inline sass */}}
+	<style>{{ (resources.Get "sass/_inline.scss" | toCSS | minify ).Content | safeCSS }}</style>
 
+	{{/* site metadata */}}
 	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 
+	{{/* RSS feed */}}
 	{{ with .OutputFormats.Get "RSS" -}}
 		{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{- end }}
