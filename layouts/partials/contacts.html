@@ -1,0 +1,39 @@
+{{ with .Site.Params.contacts }}
+<section>
+    {{- range $service, $id := . }}
+    {{- if (eq $service "rss") }}
+        <a href="{{ $id }}" target="_blank">
+            <image src="/icons/rss.svg" height=24 aria-hidden="true"></image>
+        </a>
+    {{- else if (eq $service "linkedin") }}
+        <a href="https://linkedin.com/in/{{ $id }}" target="_blank">
+            <image src="/icons/linkedin.svg" height="24" aria-hidden="true"></image>
+        </a>
+    {{-  else if (eq $service "mastodon") }}
+        <a href="https://" target="_blank">
+            <image src="/icons/mastodon.svg" height=24 aria-hidden="true"></image>
+        </a>
+    {{- else if (eq $service "email") }}
+        <a href="mailto:{{ $id }}" target="_blank">
+            <image src="/icons/envelope-at-fill.svg" height=24 aria-hidden="true"></image>
+        </a>
+    {{- else if (eq $service "micro.blog") }}
+        <a href="https://micro.blog/{{ $id }}" target="_blank">
+            <image src="/icons/hackerrank.svg" height=24 aria-hidden="true"></image>
+        </a>
+    {{- else if (eq $service "github") }}
+        <a href="https://github.com/{{ $id }}" target="_blank">
+            <image src="/icons/github.svg" height=24 aria-hidden="true"></image>
+        </a>
+    {{- else if (eq $service "gitlab") }}
+        <a href="https://gitlab.com/{{ $id }}" target="_blank">
+            <image src="/icons/gitlab.svg" height=24 aria-hidden="true"></image>
+        </a>
+    {{- else if (eq $service "hackerrank") }}
+        <a href="https://hackerrank.com/{{ $id }}" target="_blank">
+            <image src="/icons/hackerrank.svg" height=24 aria-hidden="true"></image>
+        </a>
+    {{- end }}
+    {{- end }}
+</section>
+{{- end }}

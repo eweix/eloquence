@@ -8,13 +8,4 @@
 			{{ end }}{{ end }}
 		</ul>
 	</nav>
-	<div style="display: grid;">
-		{{ with .Site.Menus.social }}
-		{{ range . }}
-		<div>
-			<a href="{{ .URL | relURL }}">
-			{{ partial "svg.html" .Params.icon }}
-		</a></div>
-		{{ end }}{{ end }}
-	</div>
 </header>
