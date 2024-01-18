@@ -2,7 +2,7 @@
 <article>
 	<h1>{{ .Title }}</h1>
 	<div>
-		{{ partial "textprocessing.html" .Content }}
+		{{ partial "textprocessing.html" . }}
 	</div>
 	{{ with .Site.DisqusShortname }}
 	<div>
