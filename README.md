@@ -1,5 +1,3 @@
-# Brevity
-
 ## Installation
 
 In your Hugo site `themes` directory, run:
